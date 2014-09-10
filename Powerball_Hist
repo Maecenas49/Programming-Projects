@@ -1,0 +1,28 @@
+import pylab
+
+def CheckYear(date,checkYear):
+    """
+    Takes a string date following mm/dd/yyyy and returns true if the date is the 
+    same or more recent than the checkYear. Returns false otherwise
+    """
+    if int(date[6:])>=checkYear:
+        return True
+    return False
+
+def PowerballFreq(year=1997):
+    """
+    Plots all winning powerball numbers fromt he date given up to the present. 
+    No input will default the year to 1997"""    
+    POWERBALL_FILE = "C:\Users\Mike\Google Drive\winnums-text.txt"
+    winnums = []
+    
+    infile = open(POWERBALL_FILE,'r',0)
+    winstr=[]
+    "Read the file and add each line into a string array"
+    for line in infile:
+        winstr.append(line)
+        
+    "For each item in the string array of lines, split based on ' '.    
+    for i in range(1:len(winstr)):
+            numbers = winstr[i].split(' ')
+            for j 
